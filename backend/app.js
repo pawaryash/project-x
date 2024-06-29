@@ -1,10 +1,14 @@
 const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser")
+const cors = require("cors");
 require('dotenv').config();
 
 
 const errorMiddleware = require("./middlewares/error")
+
+// Enable CORS
+app.use(cors());
 
 //this is the same as body-parser
 app.use(express.json());
