@@ -5,7 +5,7 @@ const connectDatabase = () => {
         throw new Error("DB_URI is not defined in the environment variables");
     }
 
-    mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    mongoose.connect(process.env.DB_URI)
         .then((db) => {
             console.log(`MongoDB connected with server: ${db.connection.host}`);
         })
